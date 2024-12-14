@@ -434,3 +434,212 @@ textarea.form-field {
   padding: 10px 16px;
   margin: 0 0 1rem 0;
 }
+
+
+/*Contact form*/
+
+.form-overlay {
+ overflow-y: auto;
+  background-color: rgba(255, 255, 255, .85);
+  backdrop-filter: blur(5px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(1.2);
+  transition: all .33s ease-out;
+}
+
+.form-overlay--is-visible {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.form-overlay-inner {
+  position: relative;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.07);
+  background-color: #fff;
+  align-self: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  
+}
+
+.form-photo {
+  height: 200px;
+  order: 1;
+  grid-row: 1;
+  position: relative;
+}
+
+.form-content {
+  padding: 38px 30px;
+  
+}
+
+
+@media screen and (min-width:768px) {
+
+  .form-content {
+    padding: 38px 54px;
+    position: relative;
+  }
+
+  .form-overlay {
+    display: flex;
+    align-items:center ;
+    justify-content: center;
+  }
+  .form-overlay-inner {
+    min-width: 880px;
+    grid-template-columns: 340px 1fr;
+    position: relative;
+  }
+
+  .form-photo {
+    height: auto;
+  }
+
+  
+}
+
+.form-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+
+.form-photo p {
+  font-size: .9rem;
+  line-height: 1.2;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 1rem 2rem;
+  background-color: rgba(255, 255, 255, .63);
+  backdrop-filter: blur(2px);
+  
+  
+}
+
+
+.form-photo p strong {
+  font-size: 2.25rem;
+  font-weight: normal;
+  display: block;
+  line-height: 1;
+}
+
+.justify-right {
+  display: flex;
+  justify-content: end;
+}
+
+
+
+.close-form-overlay {
+  position: absolute;
+  z-index: 101;
+  right: 12px;
+  top: 0;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: rgba(0, 0, 0, .41);
+  transform: scaleX(1.6);
+  opacity: .7;
+}
+
+.close-form-overlay:hover {
+  opacity: 1;
+}
+
+.pet-card-text h3 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pet-name + button {
+  border: none;
+  background-color: transparent;
+  margin-top: .3rem;
+  opacity: .7;
+  cursor: pointer;
+  outline: none;
+}
+
+.pet-name + button:hover {
+  opacity: 1;
+}
+
+.our-btn {
+  cursor: pointer;
+}
+
+.thank-you {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  z-index: 102;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .3s ease-out;
+
+}
+
+.thank-you--visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.thank-you p {
+  align-self: center;
+  font-size: 1.4rem;
+}
+
+.thank-you svg {
+  position: relative;
+  top: 4px;
+  color: rgb(28, 167, 28);
+  margin-right: 4px;
+}
+
+.contact-list {
+  width: 100%;
+  border-collapse: collapse;
+
+}
+
+.contact-list th {
+  text-align: left;
+  color: #7d7d7d;
+  padding: 0 10px;
+  font-size: .9rem;
+  font-weight: normal;
+}
+
+
+.contact-list td {
+  font-size: 1rem;
+  padding: 10px;
+
+}
+
+.contact-list tr:nth-child(even) {
+  background-color: #f1f1f1;
+}
